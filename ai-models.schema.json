@@ -37,7 +37,7 @@
                 "type": "object",
                 "required": ["baseUrl", "models"],
                 "properties": {
-                  "baseUrl": { "type": "string", "format": "uri" },
+                  "baseUrl": { "type": "string", "pattern": "^https?://" },
                   "models": { "type": "array", "items": { "type": "string" } }
                 }
               }

@@ -15,4 +15,4 @@ jobs:
       - name: JSON parses and matches the schema
         run: |
           node -e "JSON.parse(require('fs').readFileSync('ai-models.json','utf8'))"
-          npx --yes ajv-cli@5 validate -s ai-models.schema.json -d ai-models.json --spec=draft2020 -c ajv-formats
+          npx --yes ajv-cli@5 validate -s ai-models.schema.json -d ai-models.json --spec=draft2020

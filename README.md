@@ -17,7 +17,7 @@ hours; a model listed under `hidden` disappears from the built-in list.
 - Keep `version` at `1` unless the shape changes; the app ignores files whose
   version it does not know.
 - Every Claude id must start with `claude-`; the app filters others out.
-- Validate before pushing: `npx ajv-cli validate -s ai-models.schema.json -d ai-models.json`
+- Validate before pushing: `npx ajv-cli@5 validate -s ai-models.schema.json -d ai-models.json --spec=draft2020`
   (CI runs the same check on every push).
 
 Served from `https://raw.githubusercontent.com/lunascape/lunascape-config/main/ai-models.json`.
