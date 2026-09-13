@@ -1,0 +1,18 @@
+name: Validate
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: JSON parses and matches the schema
+        run: |
+          node -e "JSON.parse(require('fs').readFileSync('ai-models.json','utf8'))"
+          npx --yes ajv-cli@5 validate -s ai-models.schema.json -d ai-models.json --spec=draft2020 -c ajv-formats

@@ -1,0 +1,41 @@
+{
+  "$schema": "./ai-models.schema.json",
+  "version": 1,
+  "updatedAt": "2026-09-13",
+  "providers": {
+    "anthropic": {
+      "models": [
+        { "id": "claude-sonnet-5", "label": "Claude Sonnet 5 (recommended)", "recommended": true },
+        { "id": "claude-fable-5", "label": "Claude Fable 5 (most capable)" },
+        { "id": "claude-opus-5", "label": "Claude Opus 5" },
+        { "id": "claude-opus-4-8", "label": "Claude Opus 4.8" },
+        { "id": "claude-sonnet-4-6", "label": "Claude Sonnet 4.6" },
+        { "id": "claude-opus-4-6", "label": "Claude Opus 4.6" },
+        { "id": "claude-haiku-4-5-20251001", "label": "Claude Haiku 4.5 (fast, low cost)" }
+      ],
+      "hidden": []
+    },
+    "openai-compat": {
+      "presets": {
+        "openai": {
+          "baseUrl": "https://api.openai.com/v1",
+          "models": ["gpt-5.6", "gpt-5.5", "gpt-5.5-mini", "gpt-5.4", "gpt-4.1", "gpt-4o", "o4-mini"]
+        },
+        "deepseek": {
+          "baseUrl": "https://api.deepseek.com/v1",
+          "models": ["deepseek-chat", "deepseek-reasoner"]
+        },
+        "qwen": {
+          "baseUrl": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+          "models": ["qwen-plus", "qwen-max", "qwen-turbo", "qwen3-coder-plus"]
+        },
+        "moonshot": {
+          "baseUrl": "https://api.moonshot.ai/v1",
+          "models": ["kimi-k2-0711-preview", "moonshot-v1-128k"]
+        },
+        "ollama": { "baseUrl": "http://localhost:11434/v1", "models": [] },
+        "lmstudio": { "baseUrl": "http://localhost:1234/v1", "models": [] }
+      }
+    }
+  }
+}

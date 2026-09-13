@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Lunascape AI model catalogue",
+  "type": "object",
+  "required": ["version", "providers"],
+  "properties": {
+    "version": { "const": 1 },
+    "updatedAt": { "type": "string" },
+    "providers": {
+      "type": "object",
+      "properties": {
+        "anthropic": {
+          "type": "object",
+          "required": ["models"],
+          "properties": {
+            "models": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["id"],
+                "properties": {
+                  "id": { "type": "string", "pattern": "^claude-" },
+                  "label": { "type": "string" },
+                  "recommended": { "type": "boolean" }
+                }
+              }
+            },
+            "hidden": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "openai-compat": {
+          "type": "object",
+          "properties": {
+            "presets": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "required": ["baseUrl", "models"],
+                "properties": {
+                  "baseUrl": { "type": "string", "format": "uri" },
+                  "models": { "type": "array", "items": { "type": "string" } }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
