@@ -1,16 +1,16 @@
 {
   "$schema": "./ai-models.schema.json",
   "version": 1,
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-10",
   "providers": {
     "anthropic": {
       "models": [
         { "id": "claude-opus-5-5", "label": "Claude Opus 5.5 (recommended)", "recommended": true },
         { "id": "claude-sonnet-5", "label": "Claude Sonnet 5" },
-        { "id": "claude-fable-5-1", "label": "Claude Fable 5.1 (most capable)" },
+        { "id": "claude-fable-5-2", "label": "Claude Fable 5.2 (most capable)" },
         { "id": "claude-haiku-4-5-20251001", "label": "Claude Haiku 4.5 (fast, low cost)" }
       ],
-      "hidden": ["claude-opus-5", "claude-fable-5", "claude-opus-4-8", "claude-sonnet-4-6", "claude-opus-4-6"]
+      "hidden": ["claude-opus-5", "claude-fable-5-1", "claude-fable-5", "claude-opus-4-8", "claude-sonnet-4-6", "claude-opus-4-6"]
     },
     "openai-compat": {
       "presets": {
